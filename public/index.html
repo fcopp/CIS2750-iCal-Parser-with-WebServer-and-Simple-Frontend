@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CHANGE ME</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="CHANGE ME">
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- Custom CSS End -->
+</head>
+<body>
+    <h3>Status Panel</h3>
+    <div id = 'statPanel'>
+        <div id = 'statTermPanel' style="overflow: auto; max-height:6em">
+
+        </div>  
+
+        <input type='button' class="btn btn-secondary" id = "btnTermClear" value = "Clear">
+    </div>
+    <hr>
+
+    <h3>File Log Panel</h3>
+    <div id="filePanel">
+        <div id = 'fileTablePanel' style="overflow: auto; max-height:30em">
+            No files<br>
+        </div>
+
+        <form action="/upload" method = POST enctype=multipart/form-data>
+            <input id = "uploadFile" accept = ".ics" type="file" name="uploadFile" required = 'required'><br>
+            <input type='submit' id = "btnUpload" class="btn btn-secondary" value = "Upload">
+        </form>
+    </div>
+    <hr>
+    
+    <h3>Calendar View Panel</h3>
+    <div id = "calPanel">
+        <select id = "calViewSelect">
+            
+        </select><br>
+        <div id = "calTablePanel" style="overflow: auto; max-height:10em">
+
+        </div>
+    </div>
+    <hr>
+
+    <div>
+        <select id = "eventSelect">
+            
+        </select><br>
+        <input id = "btnShowAlarms" type='button' class="btn btn-secondary" value = "Show Chosen Event's Alarms" onclick="">
+        <input id = "btnShowProps" type='button' class="btn btn-secondary" value = "Show Chosen Event's Optional Properties" onclick="">
+    </div>
+    <hr>
+
+    <h3>Calendar Input</h3>
+    <div id = 'inPanel'>
+        <form id = "addCalForm" autocomplete="off">
+            <label for="fileName">File Name: </label>
+            <input type="text" name="fileName" value="" required = 'required'><br>
+            <label for="prodID">ProdID: </label>
+            <input id="prodID" type="text" name="prodID" value="" required = 'required'><br>
+            <label for="version">Version: </label>
+            <input id="version" type="text" name="version" value="" required = 'required'><br>
+            <h5>Event</h5>
+            <label for="eventUID">UID: </label>
+            <input id="eventUID" type="text" name="eventUID" value="" required = 'required'><br>
+            <label for="eventDTSTAMP">DTSTAMP: </label>
+            <input id="eventDTSTAMP" type="text" name="eventDTSTAMP" value="" required = 'required'><br>
+            <label for="eventDTSTART">DTSTART: </label>
+            <input id="eventDTSTART" type="text" name="eventDTSTART" value="" required = 'required'><br>
+            <label for="eventSummary">Summary: </label>
+            <input id="eventSummary" type="text" name="eventSummary" value=""><br>
+            
+            <input type="submit" value="Create Calendar">
+        </form>
+
+    </div>
+    <hr>
+
+    <h3>Add Event</h3>
+    <div id = 'eventPanel'>
+        <select id = "addEventSelect">
+            
+        </select><br>
+        <form id = "addEventForm" autocomplete="off">
+            <label for="UID">UID: </label>
+            <input id="UID" type="text" name="UID" value="" required = 'required'><br>
+            <label for="DTSTAMP">DTSTAMP: </label>
+            <input id="DTSTAMP" type="text" name="DTSTAMP" value="" required = 'required'><br>
+            <label for="DTSTART">DTSTART: </label>
+            <input id="DTSTART" type="text" name="DTSTART" value="" required = 'required'><br>
+            <label for="Summary">Summary: </label>
+            <input id="Summary" type="text" name="Summary" value=""><br>
+            
+            <input type="submit" value="Add Event">
+        </form>
+        
+    </div>
+    <hr>
+
+
+
+<!--
+    <div id=''>
+        <form ref='someform' id='someform'>
+        <div class="form-group">
+            <label for="entryBox">Last Name</label>
+            <input type="text" class="form-control" id="entryBox" value="Value" placeholder="Placeholder">
+        </div>
+        <div class="form-group">
+            <input type='submit' class="btn btn-secondary">
+        </div>
+        </form>
+    </div>
+-->
+    <!-- Leave me at the bottom of body -->
+    <script src="/index.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
